@@ -1,9 +1,10 @@
 import { Component, Input, Output, EventEmitter } from "@angular/core";
+import { IEvent } from "./shared/index";
 
 @Component({
     selector: 'event-thumbnail',
     template: `
-    <div [routerLink]="['/events', event.id]"  class="well hoverwell thumbnail">
+    <div [routerLink]="['/events', event?.id]"  class="well hoverwell thumbnail">
         <h2>{{event?.name}}</h2>
         <div>Date: {{event?.date}}</div>
 
@@ -35,7 +36,7 @@ import { Component, Input, Output, EventEmitter } from "@angular/core";
 })
 
 export class EventThumbnailComponent {
-    @Input() event: any
+    @Input() event: IEvent | undefined
 
     constructor() {
     }
