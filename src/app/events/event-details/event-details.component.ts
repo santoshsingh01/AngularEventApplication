@@ -21,5 +21,6 @@ export class EvenDetailsComponent{
 
     ngOnInit(){
         this.event = this.eventService.getEvent(+this.route.snapshot.params['id']);
+        console.log(this.event);
     }
 }
