@@ -18,6 +18,15 @@ export class ProfileComponent implements OnInit {
    profileForm!: FormGroup
    private firstName!: FormControl
    private lastName!: FormControl
+
+   states = [
+    {name: 'Arizona', abbrev: 'AZ'},
+    {name: 'California', abbrev: 'CA'},
+    {name: 'Colorado', abbrev: 'CO'},
+    {name: 'New York', abbrev: 'NY'},
+    {name: 'Pennsylvania', abbrev: 'PA'},
+  ];
+
    constructor(private auth: AuthService, private router: Router){
     
    }

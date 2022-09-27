@@ -1,0 +1,7 @@
+<div *ngIf="valueFormGroup && valueFormControl">
+    <!-- Edit -->
+    <div *ngIf="enabled" [formGroup]="valueFormGroup">
+        <label id="lbl-{{labelName}}" for="input-{{ labelName }}">{{labelName}}</label>
+        <input id="input-{{ labelName }}" class="input" type="text" [formControlName]="controlName">        
+    </div>
+</div>

@@ -20,6 +20,8 @@ import { appRoutes } from './routes';
 import { Error404Component } from './errors/404.component';
 import { AuthService } from './user/auth.service';
 import {CreateEventComponent} from './events/create-event.component';
+import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
+import { InputTextComponent } from './input-text/input-text.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import {CreateEventComponent} from './events/create-event.component';
     EvenDetailsComponent,
     CreateEventComponent,
     Error404Component,
-    CreateSessionComponent
+    CreateSessionComponent,
+    DynamicFormComponent,
+    InputTextComponent,
   ],
   imports: [
     BrowserModule,

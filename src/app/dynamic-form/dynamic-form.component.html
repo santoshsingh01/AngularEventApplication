@@ -1,0 +1,18 @@
+<p>dynamic-form works!</p>
+<div>
+    <form [formGroup]="myFormGroup" (ngSubmit)="OnSubmit()" autocomplete="off">
+        <label id="firstName" for="firstName">FirstName </label>
+        <input type="text" id="firstName" formControlName="firstName" autocomplete="off"/>
+        <br>
+
+        <!-- <div *ngFor="let propertyConfiguration of configurationResponse?.Configurations | keyvalue"> -->
+            <app-input-text [propertyConfig]="lastNamePropertyConfig" formControlName="lastName" ngDefaultControl></app-input-text>
+            <app-input-text [propertyConfig]="streetPropertyConfig" formControlName="street" ngDefaultControl ></app-input-text>
+        <!-- </div> -->
+
+        <button [disabled] = "!myFormGroup.valid" type="submit">Submit</button>
+
+        <p>{{myFormGroup.value | json}}</p>
+        <p>Form Status: {{ myFormGroup.status }}</p>
+    </form>
+</div>

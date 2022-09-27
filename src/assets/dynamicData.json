@@ -1,0 +1,28 @@
+{
+	"RootModelName": "ClientDetailsForm",
+	"Configurations": {
+		"ClientDetailsForm.lastName": {
+			"PropertyType": "String",
+			"VisibleState": 1,
+			"IsValidationEnable": true,
+			"DisplayName": "Surname",
+			"Required": true,
+			"RegularExpression": null,
+			"MinLength": null,
+			"MaxLength": null,
+			"RequiredMessage": "Lastname is required."
+		},	
+		"ClientDetailsForm.street": {
+			"PropertyType": "String",
+			"VisibleState": 1,
+			"IsValidationEnable": true,
+			"DisplayName": "street",
+			"Required": false,
+			"RegularExpression": null,
+			"MinLength": 2,
+			"MaxLength": 6,
+			"RequiredMessage": null
+		}
+	},
+	"HashValue": "9133459C11A1EAE089AFA786AC7C8DBA"
+}

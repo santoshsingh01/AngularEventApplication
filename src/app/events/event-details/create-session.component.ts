@@ -6,7 +6,7 @@ import { ISession } from "../shared";
     templateUrl: './create-session.component.html',
     styles: [`
     em {float:right; color: #E05C65; padding-left:10px;}
-    .error input, .error select, .error textarea {background-color: #E3C3C5;}
+    .error input {background-color: #E3C3C5;}
     .error ::-webkit-input-placeholder { color: #999;}
     .error ::-moz-placeholder { color: #999; }
     .error ::-moz-placeholder { color: #999; }
@@ -28,7 +28,7 @@ export class CreateSessionComponent implements OnInit {
         this.presenter = new FormControl('', Validators.required)
         this.duration = new FormControl('', Validators.required)
         this.level = new FormControl('', Validators.required)
-        this.abstract = new FormControl('', [Validators.required, Validators.maxLength(400)])
+        this.abstract = new FormControl('', [Validators.required, Validators.maxLength(400), this.restrictdWords])
 
         this.newSessionForm = new FormGroup({
             name: this.name,
@@ -39,6 +39,12 @@ export class CreateSessionComponent implements OnInit {
         })
     }
   
+    //custom validator
+    private restrictdWords(control: FormControl):{[key:string]: any}{
+        debugger;
+        return control.value.include('foo') ? {'restricted': 'foo'} : {};
+    }
+
     saveSession(formValues: any) {
         let session: ISession = {
             id: this.id,
